@@ -264,6 +264,12 @@ var eventTypeDerives = map[string][]string{
 	"SUPERVISOR_STATE_CHANGE_STOPPING": {"EVENT", "SUPERVISOR_STATE_CHANGE"},
 	"TICK_5":                           {"EVENT", "TICK"},
 	"TICK_60":                          {"EVENT", "TICK"},
+	// Add new tick events for each 5,10,15,20,30 mins
+	"TICK_300":                         {"EVENT", "TICK"},
+	"TICK_600":                         {"EVENT", "TICK"},
+	"TICK_900":                         {"EVENT", "TICK"},
+	"TICK_1200":                        {"EVENT", "TICK"},
+	"TICK_1800":                        {"EVENT", "TICK"},
 	"TICK_3600":                        {"EVENT", "TICK"},
 	"PROCESS_GROUP_ADDED":              {"EVENT", "PROCESS_GROUP"},
 	"PROCESS_GROUP_REMOVED":            {"EVENT", "PROCESS_GROUP"}}
@@ -278,6 +284,12 @@ func init() {
 func startTickTimer() {
 	tickConfigs := map[string]int64{"TICK_5": 5,
 		"TICK_60":   60,
+		// Add new tick events for each 5,10,15,20,30 mins
+		"TICK_300":  300,
+		"TICK_600":  600,
+		"TICK_900":  900,
+		"TICK_1200": 1200,
+		"TICK_1800": 1800,
 		"TICK_3600": 3600}
 
 	//start a Tick timer
